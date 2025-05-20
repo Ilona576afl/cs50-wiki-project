@@ -1,0 +1,10 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<h2>Усі статті</h2>
+<ul>
+    {% for entry in entries %}
+    <li><a href="{{ url_for('entry', title=entry) }}">{{ entry }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

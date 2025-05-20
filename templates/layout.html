@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wiki</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1><a href="{{ url_for('index') }}">Wiki</a></h1>
+    <nav>
+        <a href="{{ url_for('index') }}">🏠 Головна</a> |
+        <a href="{{ url_for('create') }}">📝 Нова стаття</a> |
+        <a href="{{ url_for('random_entry') }}">🎲 Випадкова</a>
+    </nav>
+    <form action="{{ url_for('search') }}" method="get" style="float: right;">
+        <input type="text" name="q" placeholder="Пошук">
+        <input type="submit" value="🔍">
+    </form>
+    <hr>
+    {% block body %}{% endblock %}
+</body>
+</html>

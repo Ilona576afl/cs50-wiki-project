@@ -1,0 +1,9 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<h2>Редагувати: {{ title }}</h2>
+<form method="post">
+    <textarea name="content" rows="15" cols="70">{{ content }}</textarea><br><br>
+    <input type="submit" value="💾 Зберегти">
+</form>
+{% endblock %}

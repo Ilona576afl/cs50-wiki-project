@@ -1,0 +1,14 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<h2>Результати пошуку: "{{ query }}"</h2>
+{% if results %}
+    <ul>
+        {% for title in results %}
+            <li><a href="{{ url_for('entry', title=title) }}">{{ title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Жодної відповідності не знайдено.</p>
+{% endif %}
+{% endblock %}
